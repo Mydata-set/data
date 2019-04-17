@@ -1,0 +1,47 @@
+1、安装webPack
+首先npm init（初始化）出现一个JSON文件（package）
+npm install webpack webpack-cli 
+
+2、下载编译ES6,ES7插件		bable-loader加载器
+npm install -D babel-loader @babel/core @babel/preset-env
+
+"scripts": {  		build命令
+    "build": "webpack --config webpack.config.js"
+  },
+  
+  3、下载背景图插件
+  npm install url-loader file-loader --save-dev
+                    {	              //设置匹配文件类型
+ (匹配类型)    test: /\.(jpg|png|jpeg|gif)$/,
+ (加载器)       use: "url-loader?limit=1024",		
+									  // (?limit=1024限制1kB)
+                    }
+					
+4、less 和 sass文件
+安装下载css预处理语言
+npm install less less-loader
+
+5、自动生成html文件...   (dist 中并且自动引入bundle.js)
+下载插件：
+npm install html-webpack-plugin
+
+6、安装自动打开服务器，自动刷新页面
+npm install webpack-dev-server		     (局部安装)
+npm install webpack-dev-server -g      (全局安装)
+
+
+----------------------------------------------------------------------
+
+										less语法
+1、安装less 工具( less语法 —> css)
+								(lessc命令安装)
+npm install less -g ( 全局安装)完成后会出现 lessc命令
+npm 文件名.less 文件名.css     //生成css文件
+(变量符号@): @color: "red"
+// F:\GsVideo\JQUERY\Vue\代码\webPack\less和scss写法规范\less
+
+								( 文本后缀是scss )
+npm install sass -g (全局安装)完成后出现sass命令 
+npm 文件名.scss 文件名.css  //生成css文件 
+(变量符号$): $color: "red"
+ // F:\GsVideo\JQUERY\Vue\代码\webPack\less和scss写法规范\scss

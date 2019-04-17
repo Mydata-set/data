@@ -1,0 +1,93 @@
+前端项目开发:
+会出现这样类似的事情：
+1.最终项目一定要上线！！！（公网）
+ 部署的代码！！！（能不能是源文件！！！）
+
+
+2.压缩混淆
+  压缩: 
+  混淆:  function a() {} a()
+
+  图片处理。。。。
+
+100M -> 2M
+Vue(200M) -> 5M
+  使用工具进行自动化处理！！！
+
+3.webpack
+模块打包工具？
+不仅仅把js看出模块，css png文件....
+什么叫模块化？
+1）ES6 module  （import export）              模块化规范
+2）Commonjs    （require   module.exports）
+3）AMD         （require.js）
+4）CMD          (sea.js)
+
+webpack ---> bundle.js
+     ES6/ES7/ES8  -> ES5  ()
+
+webpack 本身识别不了ES7语法
+
+  要讲babel集成到webpack中去
+
+
+==========================
+各种的loader加载器
+（javascript和json文件！！！）
+
+下载babel-loader
+npm install -D babel-loader @babel/core @babel/preset-env
+
+
+css文件进行处理。
+css文件打包到bundle.js
+
+
+1. npm install webpack webpack-cli
+
+2. 工程的根目录创建一个webpack.config.js (管理整个工程的配置文件！！！)
+
+
+3. 对js文件的处理！！！
+module.exports = {
+  "entry": "./index.js",
+  "output": {
+      "path": path.resolve(__dirname, "dist"),
+      "filename": "bundle.js"
+   },
+   module: {
+    rules: [
+       {
+          test:/\.js$/,
+          use: {"bable-loader"}, 
+          exclude: /node_moules/
+       }
+    ]
+    
+  }
+}
+
+// 4.对css文件进行处理！！！
+css-loader style-loader
+
+
+需要用到加载器来处理更高级的js语法
+babel-loader babel preset/evn....
+
+
+// 5.对图片进行处理！！！
+url-loader file-loader
+
+// 6.scss和less文件？
+CSS预处理语言
+npm install less less-loader
+明天专门讲解less和sass
+
+// 7.自动生成html文件。。。（dist中并且自动引入bundle.js）
+html-webpack-plugin
+
+// 8.自动打开服务器
+webpack-dev-server
+
+ 
+
